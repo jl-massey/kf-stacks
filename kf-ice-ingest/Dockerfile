@@ -1,4 +1,4 @@
-ARG BASE_CONTAINER=jimmassey/kf-notebook-base:0.1
+ARG BASE_CONTAINER=jimmassey/kf-notebook-base:latest
 
 FROM $BASE_CONTAINER
 
