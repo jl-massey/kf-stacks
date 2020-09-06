@@ -9,7 +9,9 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV CONDA_DIR=/opt/conda \
-    NB_USER=$NB_USER
+    NB_USER=$NB_USER \
+    CONDA_PREFIX=/opt/conda \
+    JAVA_HOME=/opt/conda
 
 WORKDIR /tmp
 
