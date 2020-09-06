@@ -122,10 +122,11 @@ RUN ${CONDA_DIR}/bin/conda install -c conda-forge -c defaults \
    elyra \
    nb_conda_kernels \
    jupyterlab-nvdashboard \
-&& jupyter lab build \
+&& jupyter lab build --dev-build=False --minimize=True \
 && conda clean --all -f -y \
-&& npm cache clean --force \
 && rm -rf $CONDA_DIR/share/jupyter/lab/staging \
+   $CONDA_DIR/share/jupyter/lab/static/*.map \
+   /tmp/npm-* \
 && rm -rf $HOME/.cache/yarn \
 && fix-permissions $CONDA_DIR \
 && fix-permissions $HOME
