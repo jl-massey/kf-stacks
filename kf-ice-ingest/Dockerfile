@@ -1,6 +1,8 @@
-ARG BASE_CONTAINER=jimmassey/kf-notebook-base:latest
 
-FROM $BASE_CONTAINER
+ARG BASE_CONTAINER=jimmassey/kf-notebook-base
+ARG BASE_TAG=latest
+
+FROM $BASE_CONTAINER:$BASE_TAG
 
 ARG NB_USER="jovyan"
 
