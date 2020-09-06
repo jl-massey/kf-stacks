@@ -11,6 +11,7 @@ dependencies:
   - cugraph=0.15
   - ipykernel
   - logzero=1.5
+  - openjdk=8
   - orjson=3.3
   - python-arango=5.4
   - python-dotenv=0.14
