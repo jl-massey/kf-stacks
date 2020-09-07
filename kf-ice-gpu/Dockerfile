@@ -19,10 +19,12 @@ USER $NB_USER
 # customize environment
 COPY environment.yml /tmp/environment.yml
 RUN ${CONDA_DIR}/bin/conda env update -q -f /tmp/environment.yml -n base \
+&& jupyter lab build --dev-build=False --minimize=True \
 && conda clean --all -f -y \
-&& npm cache clean --force \
 && rm -rf $CONDA_DIR/share/jupyter/lab/staging \
-&& rm -rf $HOME/$NB_USER/.cache/yarn \
+   $CONDA_DIR/share/jupyter/lab/static/*.map \
+   /tmp/npm-* \
+&& rm -rf $HOME/.cache/yarn \
 && fix-permissions $CONDA_DIR \
 && fix-permissions $HOME
 
